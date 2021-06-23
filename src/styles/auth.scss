@@ -55,6 +55,12 @@
       align-self: center;
     }
 
+    h2 {
+      font-size: 24px;
+      margin: 64px 0 24px;
+      font-family: 'Poppins', sans-serif;
+    }
+
     form {
       input {
         height: 50px;
@@ -73,9 +79,18 @@
         width: 100%;
       }
     }
+
+    p {
+      font-size: 14px;
+      color: #737380;
+      margin-top: 16px;
+
+      a {
+        color: #e559f9;
+      }
+    }
   }
 }
-
 
 .create-room {
   margin-top: 64px;
@@ -112,19 +127,18 @@
   align-items: center;
 
   &::before {
-    content: '';
+    content: "";
     flex: 1;
     height: 1px;
     background: #a8a8b3;
-    margin-right: 16px;;
+    margin-right: 16px;
   }
 
   &::after {
-    content: '';
+    content: "";
     flex: 1;
     height: 1px;
     background: #a8a8b3;
-    margin-left: 16px;;
+    margin-left: 16px;
   }
 }
-
