@@ -1,7 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import logoImg from "../assets/images/logo.svg";
-import { useAuth } from "../contexts/AuthContext";
 import { database } from "../services/firebase";
 
 import { RoomCode } from "../components/RoomCode";
@@ -10,6 +9,7 @@ import { Question } from "../components/Question/";
 
 import "../styles/room.scss";
 import { useRoom } from "../hooks/useRoom";
+import { useAuth } from "../hooks/useAuth";
 
 type RoomParams = {
   id: string;
@@ -103,8 +103,10 @@ export const Room = () => {
                   key={question.content}
                   content={question.content}
                   author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighlighted}
                 >
-                  <button
+                 { !question.isAnswered && <button
                     type="button"
                     className={`like-button ${question.likeId ? "liked" : ""}`}
                     aria-label="Marcar como gostei"
@@ -130,7 +132,7 @@ export const Room = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </button>
+                  </button>}
                 </Question>
               );
             })}

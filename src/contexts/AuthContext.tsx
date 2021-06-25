@@ -18,7 +18,7 @@ type AuthProviderProps = {
   children: React.ReactNode;
 };
 
-const AuthContext = createContext({} as AuthContextType);
+export const AuthContext = createContext({} as AuthContextType);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User>();
@@ -70,7 +70,4 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   );
 };
 
-export const useAuth = () => {
-  const ctx = useContext(AuthContext);
-  return ctx;
-};
+
